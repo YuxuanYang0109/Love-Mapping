@@ -44,8 +44,8 @@
     "swc": false,
     "disableSWC": true
   },
-  "appid": "wx26dadb8825592a2e",
-  "projectname": "quickstart-wx-cloud",
+  "appid": "touristappid",
+  "projectname": "lovemapping",
   "libVersion": "2.20.1",
   "cloudfunctionTemplateRoot": "cloudfunctionTemplate/",
   "condition": {

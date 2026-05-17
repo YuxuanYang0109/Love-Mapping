@@ -2,7 +2,7 @@
 App({
   globalData: {
     authStorageKey: "love_map_logged_in_v1",
-    loginPassphrase: "沙县小吃",
+    loginPassphrase: "CHANGE_ME",
   },
 
   onLaunch() {
@@ -12,7 +12,7 @@ App({
     }
 
     wx.cloud.init({
-      env: "cloud1-6ga2yj9x2b0ad3c2",
+      env: "YOUR_CLOUD_ENV_ID",
       traceUser: true,
     });
   },
