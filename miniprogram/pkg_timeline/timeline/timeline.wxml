@@ -1,0 +1,46 @@
+<view class="page" style="padding-top: {{topInset + 12}}px;">
+
+<seg-toggle
+  active="{{activeTab}}"
+  topPx="{{segTopPx}}"
+  leftPx="{{segLeftPx}}"
+  bind:change="onSegChange"
+/>
+
+<view class="list">
+  <block wx:for="{{items}}" wx:key="_id">
+    <view class="card"
+      style="background: {{item.cardBg}}; border-color: {{item.cardBorder}};"
+      bindtap="openItem"
+      data-id="{{item._id}}"
+    >
+      <view class="card-top">
+        <view class="author">
+          <image class="avatar-img" mode="aspectFill" src="{{item.avatarUrl}}"></image>
+          <view class="name">{{item.authorName}}</view>
+        </view>
+        <view class="time">{{item.timeText}}</view>
+      </view>
+
+      <view class="loc" wx:if="{{item.location}}">{{item.location}}</view>
+      <view class="loc muted" wx:else>不知道宝宝在哪</view>
+
+      <view class="photo" wx:if="{{item.photoUrl}}">
+        <image class="img" mode="aspectFill" src="{{item.photoUrl}}"></image>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class="footer">
+  <button
+    class="btn"
+    bindtap="loadMore"
+    loading="{{loading}}"
+    disabled="{{loading || noMore}}"
+  >
+    {{noMore ? "宝宝我一直都在，咱们不怕异地恋" : (loading ? "加载中…" : "加载更多")}}
+  </button>
+</view>
+
+</view>

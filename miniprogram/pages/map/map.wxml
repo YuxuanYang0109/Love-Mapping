@@ -1,0 +1,49 @@
+<view class="page">
+  <map
+    id="mainMap"
+    class="map"
+    latitude="{{latitude}}"
+    longitude="{{longitude}}"
+    scale="{{scale}}"
+    markers="{{markers}}"
+    show-location="true"
+    bindmarkertap="onMarkerTap"
+  >
+    <seg-toggle
+      active="{{activeTab}}"
+      topPx="{{segTopPx}}"
+      leftPx="{{segLeftPx}}"
+      bind:change="onSegChange"
+    />
+
+    <cover-view class="fab-glass" bindtap="goRecord">
+      <cover-view class="fab-plus">
+        <cover-view class="fab-plus-h"></cover-view>
+        <cover-view class="fab-plus-v"></cover-view>
+      </cover-view>
+    </cover-view>
+  </map>
+
+  <image class="corner-left-image" mode="widthFix" src="/images/111.png"></image>
+
+  <view wx:if="{{popupVisible}}" class="mask" bindtap="onMaskTap">
+    <view class="modal" bindtap="stopTap">
+      <view class="modal-header">
+        <view class="modal-title">{{popup.authorName}}</view>
+        <view class="modal-time">{{popup.timeText}}</view>
+      </view>
+
+      <view class="modal-loc" wx:if="{{popup.location}}">
+        {{popup.location}}
+      </view>
+
+      <view class="modal-text">{{popup.text}}</view>
+
+      <image wx:if="{{popup.photoUrl}}" class="modal-img" mode="aspectFill" src="{{popup.photoUrl}}"></image>
+
+      <view class="modal-actions">
+        <view class="modal-btn" bindtap="closePopup">Close</view>
+      </view>
+    </view>
+  </view>
+</view>

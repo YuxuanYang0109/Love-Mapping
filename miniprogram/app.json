@@ -1,0 +1,31 @@
+{
+  "lazyCodeLoading": "requiredComponents",
+  "pages": [
+    "pages/index/index",
+    "pages/map/map"
+  ],
+  "subPackages": [
+    {
+      "root": "pkg_record",
+      "pages": ["record/record"]
+    },
+    {
+      "root": "pkg_timeline",
+      "pages": ["timeline/timeline"]
+    }
+  ],
+  "window": {
+    "navigationBarTitleText": "love Mapping",
+    "navigationStyle": "custom"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用于在地图上标记我们记录的位置与回看足迹"
+    }
+  },
+  "requiredPrivateInfos": [
+    "getLocation"
+  ],
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

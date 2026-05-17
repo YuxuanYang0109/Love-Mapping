@@ -1,0 +1,31 @@
+<view class="login-page">
+  <view class="login-panel">
+    <view class="eyebrow">LOVE MAPPING</view>
+    <view class="title">Login</view>
+    <view class="subtitle">
+      First launch requires the passphrase. Later launches skip login.
+    </view>
+
+    <input
+      class="login-input"
+      placeholder="Enter passphrase"
+      maxlength="20"
+      password="{{false}}"
+      value="{{passphrase}}"
+      bindinput="onPassphraseInput"
+      confirm-type="done"
+      bindconfirm="submitLogin"
+    />
+
+    <view wx:if="{{errorText}}" class="error-text">{{errorText}}</view>
+
+    <button
+      class="login-btn"
+      loading="{{submitting}}"
+      disabled="{{submitting}}"
+      bindtap="submitLogin"
+    >
+      Enter
+    </button>
+  </view>
+</view>

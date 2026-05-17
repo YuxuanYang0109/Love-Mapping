@@ -1,0 +1,45 @@
+.seg-wrap{
+  position: absolute;
+  height: 72rpx;
+  width: 240rpx;
+  border-radius: 999rpx;
+  background: rgba(255,255,255,0.82);
+  box-shadow: 0 10rpx 30rpx rgba(0,0,0,0.12);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 8rpx;
+  z-index: 999;
+  backdrop-filter: blur(12px);
+}
+
+.seg-thumb{
+  position: absolute;
+  top: 12rpx;
+  left: 12rpx;
+  width: 114rpx;
+  height: 60rpx;
+  border-radius: 999rpx;
+  background: rgba(17,17,17,0.92);
+  box-shadow: 0 12rpx 26rpx rgba(0,0,0,0.18);
+  transition: left 180ms ease;
+}
+
+.seg-thumb.right{
+  transform: translateX(114rpx);
+}
+
+.seg-item{
+  flex: 1;
+  height: 56rpx;
+  border-radius: 999rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  font-weight: 800;
+  color: rgba(0,0,0,0.65);
+  z-index: 1;
+}
+
+.seg-item.active{ color: #fff; }

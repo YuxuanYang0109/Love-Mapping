@@ -1,0 +1,6 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "seg-toggle": "/components/seg-toggle/seg-toggle"
+  }
+}

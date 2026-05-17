@@ -1,0 +1,127 @@
+<view class="page" style="padding-top: {{topInset + 12}}px;">
+
+<!-- 顶部操作区 -->
+<view class="section">
+  <view class="section-title">宝宝你现在在哪呀？</view>
+  <input
+    class="input"
+    placeholder="除了我的心里..."
+    maxlength="40"
+    value="{{location}}"
+    bindinput="onLocationInput"
+  />
+  <view class="counter">{{location.length}} / 40</view>
+</view>
+<view class="section">
+  <view class="section-title">具体在哪啊</view>
+
+  <view class="loc-row">
+    <view class="loc-status">
+      <text wx:if="{{hasLocation}}">已定位：{{latText}}, {{lngText}}</text>
+      <text wx:else>点一下右边我就能找到你啦</text>
+    </view>
+
+    <view class="loc-actions">
+      <button
+        size="mini"
+        class="mini-btn"
+        wx:if="{{!hasLocation}}"
+        bindtap="getLocation"
+      >
+        获取定位
+      </button>
+
+      <button
+        size="mini"
+        class="mini-btn danger"
+        wx:else
+        bindtap="clearLocation"
+      >
+        清除
+      </button>
+    </view>
+  </view>
+</view>
+
+<view class="section">
+  <view class="section-title">拍给我看看宝宝在干什么嘛</view>
+
+  <view class="photo-row">
+    <view class="photo-box" wx:if="{{!photoPath}}" bindtap="choosePhoto">
+      <view class="photo-plus">+</view>
+      <view class="photo-tip">添加宝宝美照</view>
+    </view>
+
+    <view class="photo-preview" wx:if="{{photoPath}}">
+      <image class="photo-img" mode="aspectFill" src="{{photoPath}}"></image>
+      <view class="photo-actions">
+        <button size="mini" class="mini-btn" bindtap="previewPhoto">预览</button>
+        <button size="mini" class="mini-btn danger" bindtap="removePhoto">移除</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="section">
+  <view class="section-title">宝宝是不是想跟我说什么呀</view>
+  <textarea
+    class="textarea"
+    placeholder="宝宝尽管写，无论写多少，我看完马上回你..."
+    maxlength="200"
+    value="{{text}}"
+    bindinput="onTextInput"
+  />
+  <view class="counter">{{text.length}} / 200</view>
+</view>
+
+<view class="section">
+  <view class="section-title">宝宝心情怎么样呢</view>
+
+  <!-- 情绪仪表盘：用 movable-area + movable-view 实现拖拽取值 -->
+  <view class="mood-wrap">
+    <movable-area id="moodArea" class="mood-area">
+      <view class="mood-bg"></view>
+
+      <movable-view
+        class="mood-dot"
+        direction="all"
+        x="{{dotX}}"
+        y="{{dotY}}"
+        out-of-bounds="false"
+        friction="2"
+        damping="18"
+        bindchange="onDotChange"
+      />
+    </movable-area>
+
+    <view class="mood-meta">
+      <view class="mood-axes">
+        <text>高不高兴呢 X：{{moodXText}}</text>
+        <text>累不累呢 Y：{{moodYText}}</text>
+      </view>
+      <view class="mood-summary">{{moodSummary}}</view>
+    </view>
+
+    <view class="mood-hint">
+      左=不愉快，右=愉快；下=低能量，上=高能量
+    </view>
+  </view>
+</view>
+
+
+
+<!-- 底部提交 -->
+<view class="footer">
+  <button
+    class="submit"
+    type="primary"
+    loading="{{submitting}}"
+    disabled="{{submitting}}"
+    bindtap="submit"
+  >
+    {{submitting ? "呼叫中…" : "呼叫宝宝"}}
+  </button>
+  <view class="footer-tip">宝宝乖乖稍等！我马上就来找宝宝了！</view>
+</view>
+
+</view>

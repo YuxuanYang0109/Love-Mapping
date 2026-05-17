@@ -1,0 +1,209 @@
+.page {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+  padding-bottom: 40rpx;
+  background: #f6f6f6;
+}
+
+.section {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 22rpx;
+  margin-bottom: 18rpx;
+  box-shadow: 0 10rpx 24rpx rgba(0, 0, 0, 0.06);
+}
+
+.section-title {
+  font-size: 28rpx;
+  font-weight: 700;
+  margin-bottom: 16rpx;
+  color: #111;
+}
+
+/* Photo */
+.photo-row {
+  display: flex;
+  gap: 18rpx;
+  align-items: flex-start;
+}
+
+.photo-box {
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 18rpx;
+  border: 2rpx dashed rgba(0,0,0,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: rgba(0,0,0,0.6);
+}
+
+.photo-plus {
+  font-size: 56rpx;
+  line-height: 56rpx;
+}
+
+.photo-tip {
+  margin-top: 6rpx;
+  font-size: 24rpx;
+}
+
+.photo-preview {
+  flex: 1;
+}
+
+.photo-img {
+  width: 100%;
+  height: 220rpx;
+  border-radius: 18rpx;
+}
+
+.photo-actions {
+  display: flex;
+  gap: 14rpx;
+  margin-top: 12rpx;
+}
+
+.mini-btn {
+  background: #f2f2f2 !important;
+  color: #111 !important;
+  border-radius: 999rpx !important;
+}
+
+.mini-btn.danger {
+  background: rgba(238, 106, 116, 0.16) !important;
+  color: #b4232d !important;
+}
+
+/* Text */
+.textarea {
+  width: 100%;
+  min-height: 180rpx;
+  border-radius: 16rpx;
+  background: #fafafa;
+  padding: 16rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+
+.counter {
+  margin-top: 10rpx;
+  font-size: 22rpx;
+  color: rgba(0,0,0,0.5);
+  text-align: right;
+}
+
+/* Mood */
+.mood-wrap {}
+
+.mood-area {
+  width: 100%;
+  height: 520rpx;
+  position: relative;
+  border-radius: 18rpx;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* 渐变背景：四象限融合（用两层线性渐变叠加近似） */
+.mood-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 18rpx;
+  background:
+   radial-gradient(circle at 0% 100%, rgba(75,180,234,1), rgba(75,180,234,0) 60%),
+   radial-gradient(circle at 0% 0%,   rgba(238,106,116,1), rgba(238,106,116,0) 60%),
+   radial-gradient(circle at 100% 100%, rgba(136,182,77,1), rgba(136,182,77,0) 60%),
+   radial-gradient(circle at 100% 0%, rgba(252,201,89,1), rgba(252,201,89,0) 60%);
+  background-color: #ffffff; /* 底色 */
+  }
+
+/* 拖拽点 */
+.mood-dot {
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 22rpx;
+  background: rgba(255,255,255,0);          /* 透明中心 */
+  border: 4rpx solid rgba(255,255,255,0.95); /* 白色边框 */
+  box-shadow:
+    0 0 0 10rpx rgba(255,255,255,0.18),
+    0 12rpx 28rpx rgba(0,0,0,0.22);
+}
+
+/* 元信息 */
+.mood-meta {
+  margin-top: 14rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.mood-axes {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: rgba(0,0,0,0.7);
+}
+
+.mood-summary {
+  font-size: 28rpx;
+  font-weight: 650;
+  color: #111;
+}
+
+.mood-hint {
+  margin-top: 10rpx;
+  font-size: 22rpx;
+  color: rgba(0,0,0,0.48);
+}
+
+/* Location */
+.loc-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.loc-status {
+  font-size: 26rpx;
+  color: rgba(0,0,0,0.75);
+}
+
+.loc-actions {
+  display: flex;
+  gap: 12rpx;
+}
+
+/* Footer */
+.footer {
+  margin-top: 18rpx;
+  padding-bottom: 18rpx;
+}
+
+.submit {
+  border-radius: 16rpx !important;
+  font-size: 32rpx !important;
+  font-weight: 700 !important;
+}
+
+.footer-tip {
+  margin-top: 12rpx;
+  font-size: 22rpx;
+  color: rgba(0,0,0,0.5);
+  text-align: center;
+}
+.input{
+  width: 100%;
+  height: 88rpx;
+  border-radius: 16rpx;
+  background: #fafafa;
+  padding: 0 16rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+}

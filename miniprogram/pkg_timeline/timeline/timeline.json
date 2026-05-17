@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "timeline",
+  "usingComponents": {
+    "seg-toggle": "/components/seg-toggle/seg-toggle"
+  }
+}

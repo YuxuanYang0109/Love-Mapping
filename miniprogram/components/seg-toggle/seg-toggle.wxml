@@ -1,0 +1,20 @@
+<cover-view
+  class="seg-wrap"
+  style="top: {{topPx}}px; left: {{leftPx}}px;"
+  bindtouchstart="onTouchStart"
+  bindtouchend="onTouchEnd"
+>
+  <cover-view class="seg-thumb {{active === 'time' ? 'right' : 'left'}}"></cover-view>
+
+  <cover-view class="seg-item {{active === 'map' ? 'active' : ''}}"
+    data-tab="map" bindtap="onTap"
+  >
+    MAP
+  </cover-view>
+
+  <cover-view class="seg-item {{active === 'time' ? 'active' : ''}}"
+    data-tab="time" bindtap="onTap"
+  >
+    TIME
+  </cover-view>
+</cover-view>
